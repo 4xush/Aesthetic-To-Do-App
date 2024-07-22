@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: myFont;
+  src: url(Dream\ Orphans.otf);
+}
+body {
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("noise.gif");
+  opacity: 0.2;
+  z-index: -1;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: url("vecteezy_flat-design.jpg") no-repeat center center/cover;
+  opacity: 0.8;
+  z-index: -1;
+}
+
+.app {
+  margin-top: 2.5rem;
+  z-index: 1;
+  box-shadow: 5px 5px 0px 0px rgba(255, 0, 0, 0.268);
+  border-radius: 4px;
+  padding-inline: 2px;
+  background: linear-gradient(
+    110deg,
+    rgba(255, 76, 181, 0.3),
+    rgba(126, 204, 255, 0.2)
+  );
+}
+
+.app h2 {
+  font-family: myFont;
+  margin: 5px;
+  color: rgb(37, 34, 39);
+}
+
+li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 0 0 0;
+  font-family: myFont;
+}
+
+input[type="text"],
+#add-task-btn {
+  outline: none;
+  font-family: myFont;
+  font-size: medium;
+  letter-spacing: 0.5px;
+  padding-inline: 40px;
+  padding-block: 6px;
+  border: none;
+  border-radius: 7px;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  height: 15px;
+}
+
+#add-task-btn {
+  background-color: rgba(240, 255, 255, 0.842);
+  padding-inline: 15px;
+  margin-left: 5px;
+}
+
+button:hover,
+.material-symbols-outlined {
+  cursor: pointer;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: gray;
+}
+
+li .task-text {
+  flex: 1;
+  margin-right: 10px;
+}
+
+@media (max-width: 480px) {
+  .app {
+    width: 80%;
+    margin-top: 5rem;
+  }
+
+  .app h2 {
+    font-size: 1.2rem;
+  }
+
+  input[type="text"] {
+    font-size: small;
+    padding: 5px;
+    width: auto;
+    padding-inline: 1.4rem;
+  }
+  #add-task-btn {
+    font-size: small;
+    padding-inline: 3px;
+    padding-block: 5px;
+    width: auto;
+  }
+
+  input[type="checkbox"] {
+    height: 20px;
+  }
+}
